@@ -1,4 +1,5 @@
 import 'package:app_store_flutter/src/models/richCard_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RichBigCardWidget extends StatelessWidget {
@@ -71,7 +72,7 @@ class RichBigCardWidget extends StatelessWidget {
                         Spacer(),
                         Text(
                           data.subtitulo,
-                          style: data.subtitulo_style,
+                          style: data.subtitulo_style_light,
                         ),
                       ],
                     ),
@@ -88,7 +89,81 @@ class RichBigCardWidget extends StatelessWidget {
   }
 
   Widget _createCardVideoBig(RichCard data) {
-    return Container();
+    return Container(
+      height: 400.0,
+      child: GestureDetector(
+        onTap: () {
+          // #TODO: Abrir pestaña articulo conservando elemento
+        },
+        child: Hero(
+          tag: data.id_hero,
+          child: Card(
+            margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            clipBehavior: Clip.antiAlias,
+            elevation: 10.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  children: [
+                    Image(
+                      image: NetworkImage(data.videoPrevio),
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      width: 50.0,
+                      bottom: 5.0,
+                      right: 5.0,
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Icon(
+                          Icons.volume_off,
+                          color: Color.fromRGBO(176, 176, 176, 1.0),
+                        ),
+                        onPressed: () {},
+                        color: Color.fromRGBO(35, 35, 36, 1.0),
+                      ),
+                    )
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        data.titular.toUpperCase(),
+                        style: data.titular_style,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                      Text(
+                        data.titulo,
+                        style: data.titulo_style_dark,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(
+                        data.subtitulo,
+                        style: data.subtitulo_style_grey,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _createCardAppBig(RichCard data) {

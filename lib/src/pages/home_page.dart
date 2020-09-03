@@ -106,20 +106,19 @@ class HomePage extends StatelessWidget {
             'Chatable asiste a las personas con dificultades auditivas.'));
     articulos.add(RichCard(
         id_hero: 'card2',
-        cardType: 0,
-        titular: 'Conoce al desarrollador',
-        titulo: 'Ayudar a escuchar',
-        imagenPrevia: 'https://source.unsplash.com/1600x900/?nature,water',
+        cardType: 2,
+        titular: 'Juego del día',
+        titulo: 'Resuelve extravagantes puzles',
+        videoPrevio: 'https://source.unsplash.com/1920x1080/?game,puzzle',
         subtitulo:
-            'Chatable asiste a las personas con dificultades auditivas.'));
+            'Haz combinaciones y sidfruta de la conmovedora historia de Arrog.'));
     articulos.add(RichCard(
         id_hero: 'card3',
         cardType: 0,
-        titular: 'Conoce al desarrollador',
-        titulo: 'Ayudar a escuchar',
-        imagenPrevia: 'https://source.unsplash.com/mp_FNJYcjBM/640x537',
-        subtitulo:
-            'Chatable asiste a las personas con dificultades auditivas.'));
+        titular: 'Destacado',
+        titulo: '¿Quieres aprender a tocar el piano?',
+        imagenPrevia: 'https://source.unsplash.com/1920x1080/?piano',
+        subtitulo: ''));
 
     for (var card in articulos) {
       listCards.add(RichBigCardWidget(

@@ -18,9 +18,13 @@ class RichCard {
   final TextStyle titulo_style_light = TextStyle(
       color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold);
   final TextStyle titulo_style_dark = TextStyle(
-      color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold);
-  final TextStyle subtitulo_style = TextStyle(
+      color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold);
+  final TextStyle subtitulo_style_light = TextStyle(
       color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.normal);
+  final TextStyle subtitulo_style_grey = TextStyle(
+      color: Color.fromRGBO(160, 160, 160, 1.0),
+      fontSize: 14.0,
+      fontWeight: FontWeight.normal);
 
   RichCard(
       {@required String id_hero,
