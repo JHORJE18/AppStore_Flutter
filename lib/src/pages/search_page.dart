@@ -11,7 +11,7 @@ class SearchPage extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'terzo schermo',
+          'Search Page',
         ),
       ),
     );

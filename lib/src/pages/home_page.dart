@@ -1,4 +1,6 @@
 import 'package:app_store_flutter/src/Widgets/AvatarCircle_Widget.dart';
+import 'package:app_store_flutter/src/Widgets/RichBigCard_Widget.dart';
+import 'package:app_store_flutter/src/models/richCard_model.dart';
 import 'package:app_store_flutter/src/pages/search_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +66,7 @@ class HomePage extends StatelessWidget {
 
     return Container(
       height: 65.0,
-      margin: EdgeInsets.all(20.0),
+      margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0, bottom: 0.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -90,6 +92,41 @@ class HomePage extends StatelessWidget {
   }
 
   List<Widget> _listadoCards() {
-    return [Container()];
+    final List<RichCard> articulos = List<RichCard>();
+    final List<Widget> listCards = List<Widget>();
+
+    // Generate List Articles cards
+    articulos.add(RichCard(
+        id_hero: 'card1',
+        cardType: 0,
+        titular: 'Conoce al desarrollador',
+        titulo: 'Ayudar a escuchar',
+        imagenPrevia: 'https://source.unsplash.com/mp_FNJYcjBM/640x537',
+        subtitulo:
+            'Chatable asiste a las personas con dificultades auditivas.'));
+    articulos.add(RichCard(
+        id_hero: 'card2',
+        cardType: 0,
+        titular: 'Conoce al desarrollador',
+        titulo: 'Ayudar a escuchar',
+        imagenPrevia: 'https://source.unsplash.com/1600x900/?nature,water',
+        subtitulo:
+            'Chatable asiste a las personas con dificultades auditivas.'));
+    articulos.add(RichCard(
+        id_hero: 'card3',
+        cardType: 0,
+        titular: 'Conoce al desarrollador',
+        titulo: 'Ayudar a escuchar',
+        imagenPrevia: 'https://source.unsplash.com/mp_FNJYcjBM/640x537',
+        subtitulo:
+            'Chatable asiste a las personas con dificultades auditivas.'));
+
+    for (var card in articulos) {
+      listCards.add(RichBigCardWidget(
+        data: card,
+      ));
+    }
+
+    return listCards;
   }
 }
